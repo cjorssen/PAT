@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage{PAT,pgffor}
+
+\def\test#1{%
+  \foreach \i in {1,...,#1}{%
+    test }}
+
+\begin{document}
+
+Test \trou{Test} Test
+
+Test \trou{\test{20}} Test
+
+Test \trou{$\displaystyle\int$ Test} Test
+
+Test $\displaystyle \trou{\int}$ Test
+
+Test $$\int_{0}^{\trou{x^{2}}} \frac{x^2}{\trou{2}}$$ Test
+
+Test \trou{abc \par def} Test
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: luatex
+% coding: utf-8
+% End:

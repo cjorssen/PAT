@@ -1,0 +1,26 @@
+\newluatexattribute\gapattribute
+
+\let\troumath\phantom
+
+\def\trou#1{%
+  \bgroup
+  \setluatexattribute{\gapattribute}{1}
+  % Tout le matériau représenté par #1 aura l'attribut \gapattribute
+  % avec la valeur 1, ce qui permettra de le retrouver plus tard.
+  % La valeur est en fait arbitraire, il faut juste qu'elle existe.
+  \ifmmode\else\Large\fi #1%
+  \egroup
+  }
+
+\def\trouminimal#1{%
+  \directlua{trouminimal = "#1"}%
+  }
+
+\newbox\point
+\setbox\point=\hbox{.\kern.1em}
+
+\directlua{dofile(kpse.find_file("PAT.lua"))}
+\endinput
+% Local Variables:
+% coding: utf-8
+% End:
